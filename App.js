@@ -9,7 +9,9 @@ import {
   TouchableWithoutFeedback,
   TouchableHighlight,
   TouchableOpacity,
-  TouchableNativeFeedback, //This works only on Android, in iOS it throws error
+  TouchableNativeFeedback,
+  Button,
+  Alert,
 } from "react-native";
 
 export default function App() {
@@ -20,28 +22,30 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        Welcome to React Native! loop lplp m h hhjjhh ggt ggggu u u i i ioooopp
-        g tt f c yg gh gh v g gf gg h hgh gh gy ft v g fgf h{" "}
-      </Text>
-      <Image source={require("./assets/favicon.png")} />
-      <TouchableHighlight onPress={handlePress}>
-        <Image
-          blurRadius={10}
-          fadeDuration={1000} // in millisec, only works on android
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        />
-      </TouchableHighlight>
-      <TouchableNativeFeedback>
-        <View
-          style={{ height: 100, width: 200, backgroundColor: "dodgerblue" }}
-        ></View>
-      </TouchableNativeFeedback>
+      <Button
+        color={"#1e1e1e"}
+        title="Click Me!"
+        onPress={() => alert("Pressed")}
+      />
+      <Button
+        title="Alert.alert()"
+        onPress={() =>
+          Alert.alert("Message", "Clicked on alert?", [
+            { text: "Yes", onPress: () => console.log("Yes") },
+            { text: "No", onPress: () => console.log("No") },
+          ])
+        }
+      />
 
+      {/* Alert.prompt() works only on iOS as of now */}
+      <Button
+        title="Alert.prompt() works only on iOS"
+        onPress={() =>
+          Alert.prompt("Message", "Clicked on alert?", (text) =>
+            console.log(text)
+          )
+        }
+      />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
