@@ -1,6 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TouchableWithoutFeedback,
+  TouchableHighlight,
+  TouchableOpacity,
+  TouchableNativeFeedback, //This works only on Android, in iOS it throws error
+} from "react-native";
 
 export default function App() {
   const handlePress = () => {
@@ -15,15 +25,23 @@ export default function App() {
         g tt f c yg gh gh v g gf gg h hgh gh gy ft v g fgf h{" "}
       </Text>
       <Image source={require("./assets/favicon.png")} />
-      <Image
-        blurRadius={10}
-        fadeDuration={1000} // in millisec, only works on android
-        source={{
-          width: 200,
-          height: 300,
-          uri: "https://picsum.photos/200/300",
-        }}
-      />
+      <TouchableHighlight onPress={handlePress}>
+        <Image
+          blurRadius={10}
+          fadeDuration={1000} // in millisec, only works on android
+          source={{
+            width: 200,
+            height: 300,
+            uri: "https://picsum.photos/200/300",
+          }}
+        />
+      </TouchableHighlight>
+      <TouchableNativeFeedback>
+        <View
+          style={{ height: 100, width: 200, backgroundColor: "dodgerblue" }}
+        ></View>
+      </TouchableNativeFeedback>
+
       <StatusBar style="auto" />
     </SafeAreaView>
   );
