@@ -39,15 +39,16 @@ export default function App() {
       <View
         style={{
           backgroundColor: "dodgerblue",
-          flexBasis: 100, // This is like width on portrait mode, and like height on landscape mode
-          // width: 100,
+          width: 100,
           height: 100,
+          top: 20,
+          left: 20,
+          position: "absolute", // By default the position is relative
         }}
       ></View>
       <View
         style={{
           backgroundColor: "gold",
-          flexGrow: 1, // This behaves same as flex:1
           width: 100,
           height: 100,
         }}
@@ -55,8 +56,7 @@ export default function App() {
       <View
         style={{
           backgroundColor: "tomato",
-          // flexShrink: 1, // This behaves same as flex:-1
-          width: 400,
+          width: 100,
           height: 100,
         }}
       ></View>
