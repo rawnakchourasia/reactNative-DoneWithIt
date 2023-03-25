@@ -8,7 +8,11 @@ const WelcomeScreen = (props) => {
       source={require("../assets/background.jpg")}
     >
       <View style={styles.logoContainer}>
-        <Image source={require("../assets/logo.png")} style={styles.logo} />
+        <Image
+          resizeMode="contain"
+          source={require("../assets/logo.png")}
+          style={styles.logo}
+        />
         <Text>Sell what you don't need!</Text>
       </View>
 
