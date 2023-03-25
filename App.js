@@ -29,24 +29,31 @@ export default function App() {
       style={{
         backgroundColor: "#fff",
         flex: 1,
+        flexDirection: "row", // This can also be row-reverse, column and column-reverse
+        justifyContent: "center", // Works like in css
+        alignItems: "center", //The default value is stretch, and can be changed to baseline, flex-end
       }}
     >
       <View
         style={{
           backgroundColor: "dodgerblue",
-          flex: 2,
+          width: 100,
+          height: 300,
+          alignSelf: "flex-start",
         }}
       ></View>
       <View
         style={{
           backgroundColor: "gold",
-          flex: 1,
+          width: 100,
+          height: 200,
         }}
       ></View>
       <View
         style={{
           backgroundColor: "tomato",
-          flex: 1,
+          width: 100,
+          height: 100,
         }}
       ></View>
     </View>
