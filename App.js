@@ -25,15 +25,31 @@ export default function App() {
   console.log(useWindowDimensions());
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View
+      style={{
+        backgroundColor: "#fff",
+        flex: 1,
+      }}
+    >
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: "100%",
-          height: orientation === "landscape" ? "100%" : "30%",
+          flex: 2,
         }}
       ></View>
-    </SafeAreaView>
+      <View
+        style={{
+          backgroundColor: "gold",
+          flex: 1,
+        }}
+      ></View>
+      <View
+        style={{
+          backgroundColor: "tomato",
+          flex: 1,
+        }}
+      ></View>
+    </View>
   );
 }
 
