@@ -14,22 +14,22 @@ import {
   Alert,
   Platform,
   StatusBar,
+  Dimensions,
 } from "react-native";
 
 export default function App() {
-  const handlePress = () => {
-    console.log("Pressed!!!");
-    console.log(require("./assets/favicon.png"));
-  };
+  console.log("window", Dimensions.get("window"));
+  console.log("screen", Dimensions.get("screen"));
 
   return (
     <SafeAreaView style={styles.container}>
-      <Button
-        color={"#1e1e1e"}
-        title="Click Me!"
-        onPress={() => alert(StatusBar.currentHeight)}
-      />
-      <StatusBar1 style="auto" />
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "50%",
+          height: 70,
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
