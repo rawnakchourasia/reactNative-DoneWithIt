@@ -32,26 +32,41 @@ export default function App() {
         flexDirection: "row", // This can also be row-reverse, column and column-reverse
         justifyContent: "center", // Works like in css
         alignItems: "center", //The default value is stretch, and can be changed to baseline, flex-end
+        alignContent: "center", // This is only used when flexWrap is used
+        flexWrap: "wrap",
       }}
     >
       <View
         style={{
           backgroundColor: "dodgerblue",
           width: 100,
-          height: 300,
-          alignSelf: "flex-start",
+          height: 100,
         }}
       ></View>
       <View
         style={{
           backgroundColor: "gold",
           width: 100,
-          height: 200,
+          height: 100,
         }}
       ></View>
       <View
         style={{
           backgroundColor: "tomato",
+          width: 100,
+          height: 100,
+        }}
+      ></View>
+      <View
+        style={{
+          backgroundColor: "gray",
+          width: 100,
+          height: 100,
+        }}
+      ></View>
+      <View
+        style={{
+          backgroundColor: "greenyellow",
           width: 100,
           height: 100,
         }}
