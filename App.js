@@ -22,6 +22,8 @@ import { useWindowDimensions } from "react-native";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 
+import AppText from "./app/components/AppText";
+
 export default function App() {
   const orientation = useDeviceOrientation();
   console.log(useWindowDimensions());
@@ -36,7 +38,7 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <Text
+      <AppText
         style={{
           // All these styles are only applicable to Text, not any other like View
           fontFamily: "Roboto", // Different fonts work on iOS and Android
@@ -55,7 +57,7 @@ export default function App() {
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book.
-      </Text>
+      </AppText>
     </View>
   );
 }
