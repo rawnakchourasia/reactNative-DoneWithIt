@@ -16,6 +16,7 @@ import {
   StatusBar,
   Dimensions,
 } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import { useDeviceOrientation } from "@react-native-community/hooks";
 import { useWindowDimensions } from "react-native";
@@ -38,26 +39,7 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <AppText
-        style={{
-          // All these styles are only applicable to Text, not any other like View
-          fontFamily: "Roboto", // Different fonts work on iOS and Android
-          // We can also use Expo custom fonts
-          fontSize: 30,
-          fontStyle: "italic",
-          fontWeight: "500",
-          color: "tomato",
-          textTransform: "capitalize",
-          textAlign: "center",
-          lineHeight: 50,
-          textDecorationLine: "underline",
-        }}
-      >
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
-      </AppText>
+      <MaterialIcons name="email" size={50} color="dodgerblue" />
     </View>
   );
 }
