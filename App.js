@@ -36,32 +36,26 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <View
+      <Text
         style={{
-          backgroundColor: "dodgerblue",
-          width: 100,
-          height: 100,
-          padding: 20,
-          paddingHorizontal: 10,
-          paddingLeft: 30,
+          // All these styles are only applicable to Text, not any other like View
+          fontFamily: "Roboto", // Different fonts work on iOS and Android
+          // We can also use Expo custom fonts
+          fontSize: 30,
+          fontStyle: "italic",
+          fontWeight: "500",
+          color: "tomato",
+          textTransform: "capitalize",
+          textAlign: "center",
+          lineHeight: 50,
+          textDecorationLine: "underline",
         }}
       >
-        <View
-          style={{
-            backgroundColor: "gold",
-            width: 50,
-            height: 50,
-          }}
-        ></View>
-      </View>
-      <View
-        style={{
-          width: 100,
-          height: 100,
-          backgroundColor: "tomato",
-          margin: 30, // Same other forms of margin just as padding discussed above
-        }}
-      ></View>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </Text>
     </View>
   );
 }
