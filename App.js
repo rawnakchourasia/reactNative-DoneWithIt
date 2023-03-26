@@ -41,11 +41,12 @@ export default function App() {
           backgroundColor: "dodgerblue",
           width: 100,
           height: 100,
-          borderWidth: 10,
-          borderColor: "royalblue",
-          borderTopWidth: 20,
-          borderRadius: 10, // Keep this half in px of width and height for a circle
-          borderTopLeftRadius: 50,
+          shadowColor: "grey", // Works only on iOS
+          shadowOffset: { width: 10, height: -10 }, // Works only on iOS
+          shadowOpacity: 0.5, // Works only on iOS
+          shadowRadius: 10, // Works only on iOS
+
+          elevation: 20, //Works for android only, with little effect only
         }}
       ></View>
     </View>
