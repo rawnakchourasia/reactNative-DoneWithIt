@@ -41,12 +41,25 @@ export default function App() {
           backgroundColor: "dodgerblue",
           width: 100,
           height: 100,
-          shadowColor: "grey", // Works only on iOS
-          shadowOffset: { width: 10, height: -10 }, // Works only on iOS
-          shadowOpacity: 0.5, // Works only on iOS
-          shadowRadius: 10, // Works only on iOS
-
-          elevation: 20, //Works for android only, with little effect only
+          padding: 20,
+          paddingHorizontal: 10,
+          paddingLeft: 30,
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: "gold",
+            width: 50,
+            height: 50,
+          }}
+        ></View>
+      </View>
+      <View
+        style={{
+          width: 100,
+          height: 100,
+          backgroundColor: "tomato",
+          margin: 30, // Same other forms of margin just as padding discussed above
         }}
       ></View>
     </View>
