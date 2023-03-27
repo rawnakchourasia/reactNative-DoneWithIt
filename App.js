@@ -40,6 +40,7 @@ export default function App() {
       }}
     >
       <MaterialIcons name="email" size={50} color="dodgerblue" />
+      <AppText>This is React Native!</AppText>
     </View>
   );
 }
