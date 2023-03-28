@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   tagline: {
     fontSize: 25,
-    fontWeight: 600,
+    fontWeight: "600",
     paddingVertical: 20,
   },
 });

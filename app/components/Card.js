@@ -3,7 +3,7 @@ import { View, StyleSheet, Image } from "react-native";
 import colors from "../config/colors";
 import AppText from "./AppText";
 
-function Card({ title, subTitle, image }) {
+const Card = ({ title, subTitle, image }) => {
   return (
     <View style={styles.card}>
       <Image style={styles.image} source={image} />
@@ -13,7 +13,7 @@ function Card({ title, subTitle, image }) {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   card: {
