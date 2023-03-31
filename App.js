@@ -8,12 +8,20 @@ import Screen from "./app/components/Screen";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 
+import { Picker } from "@react-native-picker/picker";
+
 export default function App() {
-  const [isNew, setIsNew] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState();
   // return <ListingsScreen />;
   return (
     <Screen>
-      <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
+      <Picker
+        selectedValue={selectedLanguage}
+        onValueChange={(itemValue, itemIndex) => setSelectedLanguage(itemValue)}
+      >
+        <Picker.Item label="Java" value="java" />
+        <Picker.Item label="JavaScript" value="js" />
+      </Picker>
     </Screen>
   );
 }
