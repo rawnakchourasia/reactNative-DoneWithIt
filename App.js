@@ -1,5 +1,6 @@
 import React from "react";
 import { TextInput, StyleSheet } from "react-native";
+import AppTextInput from "./app/components/AppTextInput";
 import Icon from "./app/components/Icon";
 import ListItem from "./app/components/ListItem";
 import Screen from "./app/components/Screen";
@@ -10,13 +11,7 @@ export default function App() {
   // return <ListingsScreen />;
   return (
     <Screen>
-      <TextInput
-        placeholder="Hello"
-        style={{
-          borderBottomColor: "#ccc",
-          borderBottomWidth: 1,
-        }}
-      />
+      <AppTextInput icon="email" placeholder="Email" />
     </Screen>
   );
 }
