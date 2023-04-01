@@ -8,8 +8,10 @@ import { TouchableWithoutFeedback } from "react-native";
 import { Modal } from "react-native";
 import { Button } from "react-native";
 import Screen from "./Screen";
+import { FlatList } from "react-native";
+import PickerItem from "./PickerItem";
 
-const AppPicker = ({ icon, placeholder, ...otherProps }) => {
+const AppPicker = ({ icon, items, placeholder }) => {
   const [modalVisble, setModelVisible] = useState(false);
   return (
     <>
@@ -34,6 +36,16 @@ const AppPicker = ({ icon, placeholder, ...otherProps }) => {
       </TouchableWithoutFeedback>
       <Modal visible={modalVisble} animationType="slide">
         <Screen>
+          <FlatList
+            data={items}
+            keyExtractor={(item) => item.value.toString()}
+            renderItem={({ item }) => (
+              <PickerItem
+                label={item.label}
+                onPress={() => console.log(item)}
+              />
+            )}
+          />
           <Button title="Close" onPress={() => setModelVisible(false)} />
         </Screen>
       </Modal>
