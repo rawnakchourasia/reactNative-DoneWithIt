@@ -9,31 +9,14 @@ import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 
 import { Picker } from "@react-native-picker/picker";
+import AppPicker from "./app/components/AppPicker";
 
 export default function App() {
-  const [selectedLanguage, setSelectedLanguage] = useState();
-  const pickerRef = useRef();
-
-  function open() {
-    pickerRef.current.focus();
-  }
-
-  function close() {
-    pickerRef.current.blur();
-  }
-
   // return <ListingsScreen />;
   return (
     <Screen>
-      <Picker
-        ref={pickerRef}
-        selectedValue={selectedLanguage}
-        selectionColor="black"
-        onValueChange={(itemValue, itemIndex) => setSelectedLanguage(itemValue)}
-      >
-        <Picker.Item label="Java" value="java" />
-        <Picker.Item label="JavaScript" value="js" />
-      </Picker>
+      <AppPicker icon="apps" placeholder="Category" />
+      <AppTextInput icon="email" placeholder="Email" />
     </Screen>
   );
 }
