@@ -27,7 +27,7 @@ const LoginScreen = (props) => {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit, errors }) => (
+        {({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
           <>
             <AppTextInput
               autoCapitalize="none"
@@ -37,8 +37,9 @@ const LoginScreen = (props) => {
               keyboardType="email-address"
               textContentType="emailAddress" // Only wroks on iOS, with this be used to auto fill from key-chain
               onChangeText={handleChange("email")}
+              onBlur={() => setFieldTouched("email")}
             />
-            <ErrorMessage error={errors.email} />
+            <ErrorMessage error={errors.email} visible={touched.email} />
             <AppTextInput
               autoCapitalize="none"
               icon="lock"
@@ -47,8 +48,9 @@ const LoginScreen = (props) => {
               textContentType="password"
               secureTextEntry={true}
               onChangeText={handleChange("password")}
+              onBlur={() => setFieldTouched("password")}
             />
-            <ErrorMessage error={errors.password} />
+            <ErrorMessage error={errors.password} visible={touched.password} />
 
             <AppButton title="Login" onPress={handleSubmit} />
           </>
