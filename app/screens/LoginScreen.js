@@ -7,6 +7,7 @@ import Screen from "../components/Screen";
 import AppTextInput from "../components/AppTextInput";
 import AppButton from "../components/AppButton";
 import AppText from "../components/AppText";
+import ErrorMessage from "../components/ErrorMessage";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -37,13 +38,7 @@ const LoginScreen = (props) => {
               textContentType="emailAddress" // Only wroks on iOS, with this be used to auto fill from key-chain
               onChangeText={handleChange("email")}
             />
-            <AppText
-              style={{
-                color: "red",
-              }}
-            >
-              {errors.email}
-            </AppText>
+            <ErrorMessage error={errors.email} />
             <AppTextInput
               autoCapitalize="none"
               icon="lock"
@@ -53,13 +48,7 @@ const LoginScreen = (props) => {
               secureTextEntry={true}
               onChangeText={handleChange("password")}
             />
-            <AppText
-              style={{
-                color: "red",
-              }}
-            >
-              {errors.password}
-            </AppText>
+            <ErrorMessage error={errors.password} />
 
             <AppButton title="Login" onPress={handleSubmit} />
           </>
