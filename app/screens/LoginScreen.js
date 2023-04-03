@@ -8,6 +8,7 @@ import AppTextInput from "../components/AppTextInput";
 import AppButton from "../components/AppButton";
 import AppText from "../components/AppText";
 import ErrorMessage from "../components/ErrorMessage";
+import AppFormField from "../components/AppFormField";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -29,28 +30,24 @@ const LoginScreen = (props) => {
       >
         {({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
           <>
-            <AppTextInput
+            <AppFormField
               autoCapitalize="none"
               icon="email"
               placeholder="Email"
               autoCorrect={false}
               keyboardType="email-address"
               textContentType="emailAddress" // Only wroks on iOS, with this be used to auto fill from key-chain
-              onChangeText={handleChange("email")}
-              onBlur={() => setFieldTouched("email")}
+              name="email"
             />
-            <ErrorMessage error={errors.email} visible={touched.email} />
-            <AppTextInput
+            <AppFormField
               autoCapitalize="none"
               icon="lock"
               placeholder="Password"
               autoCorrect={false}
               textContentType="password"
               secureTextEntry={true}
-              onChangeText={handleChange("password")}
-              onBlur={() => setFieldTouched("password")}
+              name="password"
             />
-            <ErrorMessage error={errors.password} visible={touched.password} />
 
             <AppButton title="Login" onPress={handleSubmit} />
           </>
