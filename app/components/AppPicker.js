@@ -17,8 +17,10 @@ import PickerItem from "./PickerItem";
 const AppPicker = ({
   icon,
   items,
+  numberOfColumns = 1,
   onSelectItem,
   placeholder,
+  PickerItemComponent = PickerItem,
   selectedItem,
   width = "100%",
 }) => {
@@ -54,11 +56,14 @@ const AppPicker = ({
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
         <Screen>
+          <Button title="Close" onPress={() => setModalVisible(false)} />
           <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}
+            numColumns={numberOfColumns}
             renderItem={({ item }) => (
-              <PickerItem
+              <PickerItemComponent
+                item={item}
                 label={item.label}
                 onPress={() => {
                   console.log(item);
@@ -68,7 +73,6 @@ const AppPicker = ({
               />
             )}
           />
-          <Button title="Close" onPress={() => setModalVisible(false)} />
         </Screen>
       </Modal>
     </>
