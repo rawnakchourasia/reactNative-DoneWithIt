@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import {
   AppForm as Form,
   AppFormField as FormField,
-  AppFormPicker,
+  AppFormPicker as Picker,
   SubmitButton,
 } from "../components/forms";
 import Screen from "../components/Screen";
@@ -43,11 +43,7 @@ const ListingEditScreen = (props) => {
           name="price"
           placeholder="Price"
         />
-        {/* <AppFormPicker
-          items={categories}
-          name="category"
-          placeholder="Category"
-        /> */}
+        <Picker items={categories} name="category" placeholder="Category" />
         <FormField
           maxLength={255}
           multiline

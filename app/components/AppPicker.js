@@ -82,6 +82,10 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 10,
   },
+  placeholder: {
+    color: defaultStyles.colors.medium,
+    flex: 1,
+  },
   text: {
     flex: 1,
   },
