@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
 
 import { AppFormField, SubmitButton, AppForm } from "../components/forms";
