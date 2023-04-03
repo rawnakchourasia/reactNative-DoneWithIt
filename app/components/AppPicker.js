@@ -35,9 +35,13 @@ const AppPicker = ({
             />
           )}
           {selectedItem ? (
-            <AppText style={styles.text}>{selectedItem.label}</AppText>
+            <AppText style={styles.text} numberOfLines={1}>
+              {selectedItem.label}
+            </AppText>
           ) : (
-            <AppText style={styles.placeholder}>{placeholder}</AppText>
+            <AppText style={styles.placeholder} numberOfLines={1}>
+              {placeholder}
+            </AppText>
           )}
           <MaterialCommunityIcons
             name="chevron-down"
