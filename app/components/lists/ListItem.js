@@ -5,7 +5,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../../config/colors";
-import AppText from "../AppText";
+import AppText from "../Text";
 
 const ListItem = ({
   title,
